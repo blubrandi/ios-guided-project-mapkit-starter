@@ -1,18 +1,12 @@
-//
-//  Quake.swift
-//  Quakes
-//
-//  Created by morse on 1/16/20.
-//  Copyright © 2020 Lambda, Inc. All rights reserved.
-//
-
 import Foundation
-import MapKit
+
+// Earthquake model
+// in mapkit we must use a class, not a struct, because we need to subclass NSObject for MapKit
 
 class Quake: NSObject, Decodable {
     
-    
-    // mag
+    // what info do we need for an earthquake?  Investigate by looking at the earthquake api from usgs
+    // magnitude
     // place
     // time
     // coordinate
@@ -26,6 +20,7 @@ class Quake: NSObject, Decodable {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: QuakeCodingKeys.self)
+        
         let properties = try container.nestedContainer(keyedBy: QuakeCodingKeys.self, forKey: .properties)
         
         self.magnitude = 0
