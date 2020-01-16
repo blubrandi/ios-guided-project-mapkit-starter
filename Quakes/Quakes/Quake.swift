@@ -1,4 +1,5 @@
 import Foundation
+import MapKit
 
 // Earthquake model
 // in mapkit we must use a class, not a struct, because we need to subclass NSObject for MapKit
