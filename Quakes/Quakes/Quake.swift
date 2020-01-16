@@ -4,6 +4,10 @@ import MapKit
 // Earthquake model
 // in mapkit we must use a class, not a struct, because we need to subclass NSObject for MapKit
 
+struct QuakeResults: Decodable {
+    let features: [Quake]
+}
+
 class Quake: NSObject, Decodable {
 
     // what info do we need for an earthquake?  Investigate by looking at the earthquake api from usgs

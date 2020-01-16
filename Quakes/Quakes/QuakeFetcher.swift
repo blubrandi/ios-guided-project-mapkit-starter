@@ -69,6 +69,12 @@ class QuakeFetcher {
             print(data)
             do {
                 // TODO: Implement decoding
+                                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .millisecondsSince1970
+                
+                let quakeResults = try decoder.decode(QuakeResults.self, from: data)
+                completion(quakeResults.features, nil)
+                
             } catch {
                 print("Decoding error: \(error)")
                 completion(nil, error)

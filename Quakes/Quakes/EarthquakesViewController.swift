@@ -25,6 +25,8 @@ class EarthquakesViewController: UIViewController {
             if let error = error {
                 print("Error: \(error)")
             }
+            
+            print(quakes)
         }
     }
 }
