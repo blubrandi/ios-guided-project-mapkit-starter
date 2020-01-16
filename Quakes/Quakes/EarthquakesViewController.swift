@@ -31,6 +31,20 @@ class EarthquakesViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.mapView.addAnnotations(quakes)
+                    
+                    //set region for the map.  We're grabbing the first returned earthquake from the api, and then set that as our map region
+                    
+                    guard let quake = quakes.first else { return }
+                    
+                    //create coordinate span
+                    let span = MKCoordinateSpan(latitudeDelta: 2, longitudeDelta: 2)
+                    
+                    // create region, takes the coord span and the center coord
+                    let region = MKCoordinateRegion(center: quake.coordinate, span: span)
+                    
+                    //set on map
+                    self.mapView.setRegion(region, animated: true)
+                    
                 }
             }
         }
