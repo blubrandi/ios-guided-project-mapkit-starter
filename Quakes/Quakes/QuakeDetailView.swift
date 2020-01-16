@@ -13,6 +13,27 @@ import UIKit
 
 class QuakeDetailView: UIView {
     
+    private let magnitudeLabel = UILabel()
+    private let dateLabel = UILabel()
+    private let latitudeLabel = UILabel()
+    private let longitudeLabel = UILabel()
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateStyle = .short
+        result.timeStyle = .short
+        return result
+    }()
+    
+    private lazy var latLonFormatter: NumberFormatter = {
+        let result = NumberFormatter()
+        result.numberStyle = .decimal
+        result.minimumIntegerDigits = 1
+        result.minimumFractionDigits = 2
+        result.maximumFractionDigits = 2
+        return result
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -55,25 +76,5 @@ class QuakeDetailView: UIView {
             updateSubviews()
         }
     }
-    
-    private let magnitudeLabel = UILabel()
-    private let dateLabel = UILabel()
-    private let latitudeLabel = UILabel()
-    private let longitudeLabel = UILabel()
-    
-    private lazy var dateFormatter: DateFormatter = {
-        let result = DateFormatter()
-        result.dateStyle = .short
-        result.timeStyle = .short
-        return result
-    }()
-    
-    private lazy var latLonFormatter: NumberFormatter = {
-        let result = NumberFormatter()
-        result.numberStyle = .decimal
-        result.minimumIntegerDigits = 1
-        result.minimumFractionDigits = 2
-        result.maximumFractionDigits = 2
-        return result
-    }()
+
 }
