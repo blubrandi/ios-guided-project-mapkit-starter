@@ -26,7 +26,13 @@ class EarthquakesViewController: UIViewController {
                 print("Error: \(error)")
             }
             
-            print(quakes)
+            if let quakes = quakes {
+                print(quakes.count)
+                
+                DispatchQueue.main.async {
+                    self.mapView.addAnnotations(quakes)
+                }
+            }
         }
     }
 }
