@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		85E867A023D0D87900ED688D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E8679F23D0D87900ED688D /* MapKit.framework */; };
+		85E867A123D0E25100ED688D /* QuakeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD482541236B3C4F00FC12E9 /* QuakeDetailView.swift */; };
 		BD48251A236B3B6600FC12E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD482519236B3B6600FC12E9 /* AppDelegate.swift */; };
 		BD48251C236B3B6600FC12E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD48251B236B3B6600FC12E9 /* SceneDelegate.swift */; };
 		BD482523236B3B6800FC12E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD482522236B3B6800FC12E9 /* Assets.xcassets */; };
@@ -225,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD48251A236B3B6600FC12E9 /* AppDelegate.swift in Sources */,
+				85E867A123D0E25100ED688D /* QuakeDetailView.swift in Sources */,
 				C0CF107F23D0D0A50065645A /* Quake.swift in Sources */,
 				BD48253C236B3BD500FC12E9 /* EarthquakesViewController.swift in Sources */,
 				BD48251C236B3B6600FC12E9 /* SceneDelegate.swift in Sources */,
