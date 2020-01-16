@@ -23,8 +23,7 @@ class Quake: NSObject, Decodable {
         let container = try decoder.container(keyedBy: QuakeCodingKeys.self)
         
         let properties = try container.nestedContainer(keyedBy: QuakeCodingKeys.self, forKey: .properties)
-        
-        self.magnitude = 0
+        self.magnitude = try properties.decode(Double.self, forKey: .magnitude)
         
         super.init()
     }

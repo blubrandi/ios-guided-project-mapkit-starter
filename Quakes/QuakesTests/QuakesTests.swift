@@ -22,7 +22,7 @@ class QuakesTests: XCTestCase {
         do {
             let quake = try decoder.decode(Quake.self, from: quakeData)
             // Test(Expected, Actual)
-            XCTAssertEqual(1.29, quake.magnitude)
+            XCTAssertEqual(1.29, quake.magnitude, accuracy: 0.001) //add accuracy to test that it's the actual value
         } catch {
             XCTFail("Error decoding: \(error)")
         }
