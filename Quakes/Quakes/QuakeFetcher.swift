@@ -19,11 +19,12 @@ class QuakeFetcher {
     
     let baseURL = URL(string: "https://earthquake.usgs.gov/fdsnws/event/1/query")!
     let dateFormatter = ISO8601DateFormatter()
+    
     func fetchQuakes(completion: @escaping ([Quake]?, Error?) -> Void) {
         let endDate = Date()
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
-        dateComponents.day = -7 // -365 * 10 // 7 days in the past
+        dateComponents.day = -7 // -365 * 10 // 7 days in the past <-----------------------------
         guard let startDate = Calendar.current.date(byAdding: dateComponents, to: endDate) else {
             print("Date math error")
             completion(nil, QuakeError.dateMathError)
